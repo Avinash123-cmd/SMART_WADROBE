@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: smart-wardrobe-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: wardrobe-db
+          property: connectionString
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
+
+  - type: web
+    name: wardrobe-ml-service
+    runtime: docker
+    dockerfilePath: ./ml_service/Dockerfile
+    dockerContext: ./ml_service
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8001
+
+  - type: web
+    name: wardrobe-cv-service
+    runtime: docker
+    dockerfilePath: ./cv_service/Dockerfile
+    dockerContext: ./cv_service
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8002
+
+  - type: web
+    name: smart-wardrobe-frontend
+    runtime: static
+    buildCommand: echo "Frontend is part of backend"
+    staticPublishPath: ./backend
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    plan: free
+
+databases:
+  - name: wardrobe-db
+    plan: free
+    databaseName: wardrobe_db
+    user: wardrobe_user

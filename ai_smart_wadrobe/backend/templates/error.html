@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - AI Smart Wardrobe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-md mx-auto">
+            <!-- Error Icon -->
+            <div class="text-6xl text-red-500 mb-6">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <!-- Error Message -->
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                Oops! Something went wrong
+            </h1>
+            
+            <p class="text-gray-600 mb-8">
+                {{ error if error else "We encountered an unexpected error. Please try again." }}
+            </p>
+            
+            <!-- Actions -->
+            <div class="space-y-4">
+                <a href="/dashboard"
+                   class="block bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                    <i class="fas fa-home mr-2"></i>Return to Dashboard
+                </a>
+                
+                <a href="/"
+                   class="block border border-purple-600 text-purple-600 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                    <i class="fas fa-redo mr-2"></i>Go to Homepage
+                </a>
+            </div>
+            
+            <!-- Help Text -->
+            <div class="mt-8 text-sm text-gray-500">
+                <p>If the problem persists, please contact support.</p>
+                <p class="mt-2">
+                    <i class="fas fa-envelope mr-1"></i>
+                    support@smartwardrobe.com
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

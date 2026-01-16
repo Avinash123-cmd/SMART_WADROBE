@@ -1,0 +1,25 @@
+# Core
+flask==3.0.0
+gunicorn==21.2.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+flask-sqlalchemy==3.1.1
+
+# Authentication
+flask-bcrypt==1.0.1
+flask-login==0.6.3
+
+# API & Utilities
+requests==2.31.0
+python-dotenv==1.0.0
+flask-cors==4.0.0
+werkzeug==3.0.1
+
+# Image Processing
+Pillow==10.1.0
+cloudinary==1.36.0  # For image storage
+
+# Development (optional)
+blinker==1.7.0

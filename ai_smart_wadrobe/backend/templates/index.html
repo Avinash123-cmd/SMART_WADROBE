@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Wardrobe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="text-2xl font-bold text-purple-600">
+                    <i class="fas fa-tshirt mr-2"></i>Smart Wardrobe
+                </a>
+                <div class="space-x-4">
+                    <a href="/login" class="text-gray-600 hover:text-purple-600">Login</a>
+                    <a href="/register" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold text-gray-800 mb-6">
+                Your AI-Powered Personal Stylist
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Upload your real clothes, get smart outfit recommendations based on weather, occasion, and your personal style.
+            </p>
+            
+            <div class="flex justify-center space-x-4 mb-16">
+                <a href="/register" class="bg-purple-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-purple-700 transition">
+                    <i class="fas fa-user-plus mr-2"></i>Join Free
+                </a>
+                <a href="#features" class="bg-white text-purple-600 border border-purple-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-purple-50 transition">
+                    <i class="fas fa-info-circle mr-2"></i>Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div id="features" class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Upload Your Clothes</h3>
+                <p class="text-gray-600">Take photos of your real wardrobe. AI automatically detects type, color, and fabric.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Weather-Aware</h3>
+                <p class="text-gray-600">Get recommendations based on real-time weather and temperature.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">AI Recommendations</h3>
+                <p class="text-gray-600">Machine learning suggests perfect outfits for any occasion.</p>
+            </div>
+        </div>
+
+        <!-- Demo Image -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Smart Wardrobe Demo" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">See Your Wardrobe Come to Life</h2>
+                <p class="text-gray-600">Organize, visualize, and get daily outfit suggestions from your own clothes.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-gray-200 text-center text-gray-600">
+            <p>© 2024 AI Smart Wardrobe. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-purple-600">Privacy Policy</a> | 
+                <a href="#" class="hover:text-purple-600">Terms of Service</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Flash message handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const flashes = document.querySelectorAll('.flash-message');
+            flashes.forEach(flash => {
+                setTimeout(() => {
+                    flash.style.opacity = '0';
+                    setTimeout(() => flash.remove(), 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
